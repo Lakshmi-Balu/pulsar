@@ -217,6 +217,7 @@ public class ServerCnx extends PulsarHandler implements TransportCnx {
         }
     };
 
+
     enum State {
         Start, Connected, Failed, Connecting
     }
@@ -2598,7 +2599,7 @@ public class ServerCnx extends PulsarHandler implements TransportCnx {
 
     @Override
     public void execute(Runnable runnable) {
-        ctx.channel().eventLoop().execute(runnable);
+        ctx().channel().eventLoop().execute(runnable);
     }
 
     @Override
